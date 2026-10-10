@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f5f7">
+<meta name="description" content="Personal profile of Guruprasad Marathe, Product Manager at Docplexus.">
+<title>Guruprasad Marathe — Product Manager</title>
+<style>
+  :root {
+    --bg: #f5f5f7;
+    --surface: rgba(255,255,255,.78);
+    --ink: #1d1d1f;
+    --muted: #6e6e73;
+    --blue: #06c;
+    --line: rgba(29,29,31,.1);
+    --radius: 28px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    color: var(--ink);
+    background: var(--bg);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.45;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible, button:focus-visible { outline: 3px solid #06c; outline-offset: 4px; border-radius: 8px; }
+  .nav-wrap { position: sticky; top: 0; z-index: 10; background: rgba(245,245,247,.78); backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid rgba(0,0,0,.06); }
+  nav { max-width: 1120px; margin: auto; padding: 0 26px; height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+  .brand { font-size: 14px; font-weight: 650; letter-spacing: -.02em; }
+  .nav-links { display: flex; align-items: center; gap: 27px; font-size: 12px; color: #424245; }
+  .nav-links a:hover { color: var(--blue); }
+  .nav-cta { color: white !important; background: var(--blue); border-radius: 99px; padding: 7px 13px; }
+  main { overflow: hidden; }
+  .hero { min-height: 610px; display: grid; place-items: center; text-align: center; padding: 94px 24px 88px; position: relative; isolation: isolate; }
+  .hero:before { content: ""; position: absolute; z-index: -1; width: min(780px, 95vw); height: min(480px, 65vw); top: 60px; border-radius: 50%; background: radial-gradient(ellipse, rgba(190,218,255,.68) 0%, rgba(222,235,255,.48) 34%, rgba(245,245,247,0) 72%); filter: blur(15px); }
+  .eyebrow { font-size: 13px; letter-spacing: .13em; text-transform: uppercase; color: var(--muted); font-weight: 650; margin: 0 0 20px; }
+  h1 { font-size: clamp(48px, 8vw, 92px); line-height: .99; letter-spacing: -.075em; font-weight: 700; margin: 0; }
+  .hero h2 { font-size: clamp(21px, 3.2vw, 31px); letter-spacing: -.035em; font-weight: 550; color: #424245; margin: 23px 0 10px; }
+  .hero p { color: var(--muted); font-size: 17px; margin: 0 auto; max-width: 550px; }
+  .actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 29px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; border-radius: 999px; padding: 12px 19px; font-size: 14px; font-weight: 550; transition: transform .2s, background .2s; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: var(--blue); color: #fff; }
+  .btn-primary:hover { background: #0077ed; }
+  .btn-secondary { color: var(--blue); border: 1px solid rgba(0,102,204,.32); background: rgba(255,255,255,.45); }
+  .scroll-note { position: absolute; bottom: 27px; color: #86868b; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+  .section { max-width: 1120px; margin: 0 auto; padding: 26px 26px 72px; scroll-margin-top: 75px; }
+  .section-heading { text-align: center; margin: 0 0 32px; }
+  .section-heading .eyebrow { margin-bottom: 10px; }
+  h2.section-title { font-size: clamp(34px, 5vw, 54px); letter-spacing: -.06em; line-height: 1.04; margin: 0; font-weight: 680; }
+  .section-subtitle { color: var(--muted); font-size: 16px; margin: 14px auto 0; max-width: 600px; }
+  .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+  .card { background: var(--surface); border: 1px solid rgba(255,255,255,.9); box-shadow: 0 8px 35px rgba(0,0,0,.035); border-radius: var(--radius); padding: 30px; }
+  .about-card { grid-column: span 7; min-height: 245px; display: flex; flex-direction: column; justify-content: space-between; }
+  .location-card { grid-column: span 5; background: #202124; color: #fff; display: flex; flex-direction: column; justify-content: space-between; min-height: 245px; }
+  .card-label { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .1em; font-weight: 650; }
+  .location-card .card-label { color: #a1a1a6; }
+  .big-copy { font-size: clamp(23px, 3vw, 34px); line-height: 1.16; letter-spacing: -.045em; font-weight: 600; max-width: 600px; margin: 30px 0 0; }
+  .location-big { font-size: 37px; letter-spacing: -.05em; font-weight: 650; margin-top: 30px; }
+  .location-small { color: #b8b8bd; font-size: 14px; }
+  .icon { width: 40px; height: 40px; border-radius: 50%; background: rgba(0,102,204,.1); color: var(--blue); display: grid; place-items: center; }
+  .experience-card { grid-column: span 12; padding: 0; overflow: hidden; }
+  .experience-top { padding: 30px 32px 24px; display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
+  .company { font-size: 28px; font-weight: 650; letter-spacing: -.045em; margin: 7px 0 3px; }
+  .tenure { color: var(--muted); font-size: 14px; }
+  .work-item { padding: 26px 32px; display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; border-top: 1px solid var(--line); }
+  .role { font-size: 20px; letter-spacing: -.025em; font-weight: 600; margin: 0 0 6px; }
+  .date { color: var(--muted); font-size: 14px; }
+  .place { color: var(--muted); font-size: 13px; margin-top: 5px; }
+  .current { background: #e8f3ff; color: #0759a8; border-radius: 99px; font-size: 11px; font-weight: 650; padding: 7px 11px; white-space: nowrap; }
+  .education-card { grid-column: span 7; display: flex; flex-direction: column; justify-content: space-between; min-height: 230px; }
+  .education-name { font-size: 26px; line-height: 1.16; letter-spacing: -.04em; font-weight: 650; margin: 28px 0 9px; }
+  .education-degree { color: var(--muted); font-size: 15px; }
+  .skills-card { grid-column: span 5; min-height: 230px; background: #e8e8ed; }
+  .skill-pill { display: inline-flex; padding: 10px 15px; background: rgba(255,255,255,.82); border-radius: 99px; margin: 24px 5px 0 0; font-size: 14px; font-weight: 550; }
+  .contact { padding-top: 20px; padding-bottom: 90px; }
+  .contact-panel { background: linear-gradient(135deg, #e7f0ff, #f1edff 55%, #f5f5f7); border-radius: 34px; padding: clamp(34px, 7vw, 72px) 25px; text-align: center; }
+  .contact-panel h2 { font-size: clamp(36px, 6vw, 65px); line-height: 1; letter-spacing: -.065em; margin: 0; }
+  .contact-panel p { color: #62626a; margin: 17px auto 0; font-size: 16px; }
+  .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 27px; }
+  footer { max-width: 1120px; padding: 20px 26px 32px; margin: auto; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; color: #86868b; font-size: 12px; }
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *:before, *:after { transition-duration: .01ms !important; animation-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } }
+  @media (max-width: 700px) {
+    nav { padding: 0 18px; }
+    .nav-links { gap: 15px; }
+    .nav-links a:not(.nav-cta) { display: none; }
+    .hero { min-height: 570px; padding-top: 75px; }
+    .section { padding: 18px 17px 55px; }
+    .about-card, .location-card, .education-card, .skills-card { grid-column: span 12; }
+    .card { border-radius: 23px; padding: 25px; }
+    .experience-top { padding: 25px; }
+    .work-item { padding: 23px 25px; grid-template-columns: 1fr; gap: 12px; }
+    .current { justify-self: start; }
+    .company { font-size: 25px; }
+    footer { padding-left: 18px; padding-right: 18px; }
+  }
+</style>
+</head>
+<body>
+  <div class="nav-wrap">
+    <nav aria-label="Main navigation">
+      <a class="brand" href="#home">Guruprasad Marathe</a>
+      <div class="nav-links">
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact" class="nav-cta">Get in touch ↗</a>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="reveal">
+        <p class="eyebrow">Product · Technology · People</p>
+        <h1>Guruprasad<br>Marathe.</h1>
+        <h2>Product Manager at Docplexus</h2>
+        <p>Bringing a software engineering background to product management.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#experience">Explore my experience <span aria-hidden="true">↓</span></a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/guruprasad-marathe-7a373b147" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a>
+        </div>
+      </div>
+      <div class="scroll-note">A little about me · Scroll to explore</div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-heading reveal">
+        <p class="eyebrow">The overview</p>
+        <h2 class="section-title">A product mindset.<br>A technology foundation.</h2>
+        <p class="section-subtitle">Product management experience built on a foundation in software engineering.</p>
+      </div>
+      <div class="grid">
+        <article class="card about-card reveal">
+          <div class="card-label">Current focus</div>
+          <p class="big-copy">Product Manager at Docplexus, with previous experience as a Software Engineer.</p>
+        </article>
+        <article class="card location-card reveal">
+          <div>
+            <div class="card-label">Based in</div>
+            <div class="location-big">Maharashtra</div>
+          </div>
+          <div class="location-small">Mumbai, India</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Career</p>
+        <h2 class="section-title">Experience that builds.</h2>
+        <p class="section-subtitle">My professional journey at Docplexus.</p>
+      </div>
+      <div class="grid">
+        <article class="card experience-card reveal">
+          <div class="experience-top">
+            <div>
+              <div class="card-label">Company</div>
+              <div class="company">Docplexus</div>
+              <div class="tenure">3 years 2 months · As listed in profile</div>
+            </div>
+            <div class="icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 19V8.5L12 4l8 4.5V19M8 19v-5h8v5M2 19h20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <div class="work-item">
+            <div>
+              <p class="role">Product Manager</p>
+              <div class="date">September 2025 – Present</div>
+              <div class="place">Mumbai, Maharashtra, India</div>
+            </div>
+            <span class="current">Current role</span>
+          </div>
+          <div class="work-item">
+            <div>
+              <p class="role">Software Engineer</p>
+              <div class="date">September 2023 – August 2025</div>
+              <div class="place">Mumbai, Maharashtra, India</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Education & skills</p>
+        <h2 class="section-title">Built on the fundamentals.</h2>
+      </div>
+      <div class="grid">
+        <article class="card education-card reveal">
+          <div class="card-label">Education</div>
+          <div>
+            <div class="education-name">Savitribai Phule<br>Pune University</div>
+            <div class="education-degree">Computer Engineering</div>
+          </div>
+        </article>
+        <article class="card skills-card reveal">
+          <div class="card-label">Top skill</div>
+          <span class="skill-pill">Product Management</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="contact-panel reveal">
+        <p class="eyebrow">Let's connect</p>
+        <h2>Have a good idea?<br>Let's talk.</h2>
+        <p>Reach out by email or connect with me on LinkedIn.</p>
+        <div class="contact-links">
+          <a class="btn btn-primary" href="mailto:maratheg03@gmail.com">Email me ↗</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/guruprasad-marathe-7a373b147" target="_blank" rel="noopener noreferrer">LinkedIn profile ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year">2026</span> Guruprasad Marathe</span>
+    <span>Designed with simplicity in mind.</span>
+  </footer>
+<script>
+  // Lightweight entrance effects; the page remains fully usable without JavaScript.
+  const revealItems = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealItems.forEach((item) => observer.observe(item));
+  } else {
+    revealItems.forEach((item) => item.classList.add('visible'));
+  }
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
